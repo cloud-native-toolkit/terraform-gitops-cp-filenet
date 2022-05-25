@@ -1,0 +1,4 @@
+odmdbsecret:
+ namespace: gitops-cp-odm
+ db_user : db2inst1
+ db_password: P@ssw0rd

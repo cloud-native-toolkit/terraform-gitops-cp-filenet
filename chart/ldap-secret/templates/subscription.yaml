@@ -1,0 +1,10 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: ldap-bind-secret
+  namespace: {{ .Values.odmldapsecret.namespace }}
+data:
+  ldapUsername: {{ .Values.odmldapsecret.ldapUsername }} 
+  ldapPassword: {{ .Values.odmldapsecret.ldapPassword }}  
+type: Opaque
+
