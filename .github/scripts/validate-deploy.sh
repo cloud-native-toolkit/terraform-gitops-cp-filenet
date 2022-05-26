@@ -50,5 +50,11 @@ check_k8s_namespace "${NAMESPACE}"
 
 #check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
 
+#### Temporary sleep to validate deployment manually
+count=0
+echo "Sleeping for 10 minutes after finding the subscription to manually verify"
+sleep 600
+
+
 cd ..
 rm -rf .testrepo
