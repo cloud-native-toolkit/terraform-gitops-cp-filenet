@@ -2,7 +2,7 @@ locals {
   name          = "cp-filenet"
   bin_dir       = module.setup_clis.bin_dir
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart"
-  odm_yaml_dir = "${local.yaml_dir}/cp4ba-odm"
+  filenet_yaml_dir = "${local.yaml_dir}/cp4ba-filenet"
   db_yaml_dir = "${local.yaml_dir}/db-secret"
   ldap_yaml_dir = "${local.yaml_dir}/db-ldap"
 
@@ -17,7 +17,7 @@ locals {
   values_content = {
   "cp4ba" = {        
         namespace= var.namespace
-        db_server= "161.202.168.37"
+        db_server= var.db_server
         odm_db_name= var.odm_db_name
         odm_db_port= var.odm_db_port
         odm_db_type= var.odm_db_type
@@ -40,29 +40,13 @@ locals {
 
 }
 
-
-#module cp4ba-custom-imagepullsecret {
- # source = "github.com/cloud-native-toolkit/terraform-gitops-pull-secret"
-
-  # gitops_config = var.gitops_config
-  # git_credentials = var.git_credentials
-  # server_name = var.server_name
-  # kubeseal_cert = var.kubeseal_cert
-  # namespace = var.namespace
-  # docker_username = "cp"
-  # docker_password = var.cp_entitlement_key
-  # docker_server   = "cp.icr.io"
-  # secret_name     = "admin.registrykey"
- #}
-
-
 module setup_clis {
   source = "github.com/cloud-native-toolkit/terraform-util-clis.git"
 }
 
 resource null_resource create_yaml {
   provisioner "local-exec" {
-    command = "${path.module}/scripts/create-yaml.sh '${local.chart_dir}' '${local.odm_yaml_dir}'"
+    command = "${path.module}/scripts/create-yaml.sh '${local.chart_dir}' '${local.filenet_yaml_dir}'"
 
     environment = {
       VALUES_CONTENT = yamlencode(local.values_content)
@@ -78,7 +62,7 @@ resource null_resource setup_gitops {
     #name = local.name
     name = local.name
     namespace = var.namespace
-    yaml_dir = local.odm_yaml_dir
+    yaml_dir = local.filenet_yaml_dir
     server_name = var.server_name
     layer = local.layer
     type = local.type

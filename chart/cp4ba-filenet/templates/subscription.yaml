@@ -61,8 +61,8 @@ spec:
     lc_ldap_base_dn: "o=ibm,c=us"
     lc_ldap_group_base_dn: "ou=Groups,o=ibm,c=us"
     lc_ldap_group_display_name_attr: cn
-    lc_ldap_group_member_id_map: "*:cn"
-    lc_ldap_group_membership_search_filter: (&(cn=%v)(objectclass=groupOfNames))
+    lc_ldap_group_member_id_map: "groupofnames:member"
+    lc_ldap_group_membership_search_filter: (|(&(objectclass=groupofnames)(member={0}))(&(objectclass=groupofuniquenames)(uniquemember={0})))
     lc_ldap_group_name_attribute: "*:cn"
     lc_ldap_port: "389"
     lc_ldap_server: {{ .Values.cp4ba.db_server }}
