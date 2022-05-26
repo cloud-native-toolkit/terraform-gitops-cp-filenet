@@ -73,7 +73,7 @@ count=0
 until kubectl get secret icp4a-root-ca -n "${NAMESPACE}" || [[ $count -eq 30 ]]; do
   echo "Waiting for secret icp4a-root-ca in ${NAMESPACE} COUNTER $count" 
   count=$((count + 1))
-  sleep 20
+  sleep 40
 done
 
 
