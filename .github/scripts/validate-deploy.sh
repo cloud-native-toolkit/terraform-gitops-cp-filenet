@@ -50,6 +50,24 @@ check_k8s_namespace "${NAMESPACE}"
 
 #check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
 
+## Check if the subscription for ibm-automation is there 
+SUBSNAME="ibm-automation"
+count=0
+#until kubectl get subs "${SUBSNAME}" -n "${NAMESPACE}" || [[ $count -eq 20 ]]; do
+until kubectl get subs -n "${NAMESPACE}" |grep "${SUBSNAME}" || [[ $count -eq 20 ]]; do
+  echo "Waiting for Subscription/${SUBSNAME} in ${NAMESPACE}"
+  count=$((count + 1))
+  sleep 15
+done
+
+count=0
+until kubectl get secret icp4a-root-ca -n "${NAMESPACE}" || [[ $count -eq 30 ]]; do
+  echo "Waiting for secret icp4a-root-ca in ${NAMESPACE} COUNTER $count" 
+  count=$((count + 1))
+  sleep 20
+done
+
+
 #### Temporary sleep to validate deployment manually
 count=0
 echo "Sleeping for 20 minutes after finding the subscription to manually verify"
