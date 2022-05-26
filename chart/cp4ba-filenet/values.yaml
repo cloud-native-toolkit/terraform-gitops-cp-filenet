@@ -4,7 +4,7 @@ cp4ba:
  #odm_db_name: "odmdb"
  db_port: "50000"
  db_type: "db2"
- #odm_image_repository: "cp.icr.io/cp/cp4a/odm"
+ image_repository: "cp.icr.io/cp/cp4a/fncm/cpe"
  #odm_image_tag: "21.0.3-IF002"
  #odm_image_version: "21.0.3"
  storageclass_block: "ibmc-vpc-block-metro-retain-10iops-tier"

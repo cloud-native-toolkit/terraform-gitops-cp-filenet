@@ -105,20 +105,20 @@ variable "odm_db_name" {
   description = "ODM Database Name"
   default = "odmdb"
 }
-variable "odm_db_port" {
+variable "db_port" {
   type        = string
   description = "Database Port"
   default = "50000"
 }
-variable "odm_db_type" {
+variable "db_type" {
   type        = string
   description = "Database Type"
   default = "db2"
 }
-variable "odm_image_repository" {
+variable "image_repository" {
   type        = string
   description = "Repository URL "
-  default = "cp.icr.io/cp/cp4a/odm"
+  default = "cp.icr.io/cp/cp4a/fncm/cpe"
 }
 variable "odm_image_tag" {
   type        = string

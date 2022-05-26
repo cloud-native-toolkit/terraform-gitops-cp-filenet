@@ -19,13 +19,13 @@ locals {
         namespace= var.namespace
         db_server= var.db_server
         odm_db_name= var.odm_db_name
-        odm_db_port= var.odm_db_port
-        odm_db_type= var.odm_db_type
+        db_port= var.db_port
+        db_type= var.db_type
         storageclass_block: var.storageclass_block
         storageclass_fast: var.storageclass_fast
         storageclass_medium: var.storageclass_medium
         storageclass_slow: var.storageclass_slow
-      #  odm_image_repository= var.odm_image_repository
+        filenet_image_repository= var.filenet_image_repository
       #  odm_image_tag= var.odm_image_tag
      #   odm_image_version= var.odm_image_version
         }  
