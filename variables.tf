@@ -115,7 +115,7 @@ variable "db_type" {
   description = "Database Type"
   default = "db2"
 }
-variable "image_repository" {
+variable "filenet_image_repository" {
   type        = string
   description = "Repository URL "
   default = "cp.icr.io/cp/cp4a/fncm/cpe"

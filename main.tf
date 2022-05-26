@@ -13,7 +13,7 @@ locals {
   application_branch = "main"
   namespace = var.namespace
   layer_config = var.gitops_config[local.layer]
-  db_port="${var.odm_db_port}"
+  db_port="${var.db_port}"
   values_content = {
   "cp4ba" = {        
         namespace= var.namespace
