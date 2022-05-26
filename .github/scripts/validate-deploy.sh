@@ -50,6 +50,14 @@ check_k8s_namespace "${NAMESPACE}"
 
 #check_k8s_resource "${NAMESPACE}" "deployment" "${COMPONENT_NAME}"
 
+## Check if the admin.registrykey is there 
+count=0
+until kubectl get secret admin.registrykey -n "${NAMESPACE}" || [[ $count -eq 20 ]]; do
+  echo "Waiting for secret admin.registrykey in ${NAMESPACE} COUNTER $count" 
+  count=$((count + 1))
+  sleep 15
+done
+
 ## Check if the subscription for ibm-automation is there 
 SUBSNAME="ibm-automation"
 count=0
@@ -60,6 +68,7 @@ until kubectl get subs -n "${NAMESPACE}" |grep "${SUBSNAME}" || [[ $count -eq 20
   sleep 15
 done
 
+## Check if the icp4a-root-ca is there 
 count=0
 until kubectl get secret icp4a-root-ca -n "${NAMESPACE}" || [[ $count -eq 30 ]]; do
   echo "Waiting for secret icp4a-root-ca in ${NAMESPACE} COUNTER $count" 
@@ -70,9 +79,9 @@ done
 
 #### Temporary sleep to validate deployment manually
 count=0
-echo "Sleeping for 20 minutes after finding the subscription to manually verify"
-sleep 1200
-
+echo "Sleeping for 10 minutes after finding the subscription to manually verify"
+sleep 600
+#
 
 cd ..
 rm -rf .testrepo

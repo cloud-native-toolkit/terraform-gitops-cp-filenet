@@ -127,8 +127,8 @@ spec:
     sc_optional_components: "bai,cmis,css,es,iccsap,ier,tm"
     sc_run_as_user: ~
     storage_configuration: 
-      sc_block_storage_classname: ibmc-block-retain-gold
-      sc_fast_file_storage_classname: cp4a-file-retain-gold-gid
-      sc_medium_file_storage_classname: cp4a-file-retain-silver-gid
-      sc_slow_file_storage_classname: cp4a-file-retain-bronze-gid
+      sc_block_storage_classname: {{ .Values.cp4ba.storageclass_block}}
+      sc_fast_file_storage_classname: {{ .Values.cp4ba.storageclass_fast}}
+      sc_medium_file_storage_classname: {{ .Values.cp4ba.storageclass_medium}}
+      sc_slow_file_storage_classname: {{ .Values.cp4ba.storageclass_slow}}
     trusted_certificate_list: []

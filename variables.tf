@@ -146,3 +146,33 @@ variable "cp4ba_operator_namesapce"{
   description = "The namespace where the application should be deployed"
   default=""
 }
+variable "storageclass_fast" {
+  type        = string
+  #default="cp4a-file-retain-gold-gid"
+  #default="ibmc-vpc-block-metro-retain-10iops-tier"
+  default="portworx-db2-rwx-sc"
+  description = "The storge class for operator pvc"
+}
+
+variable "storageclass_medium" {
+  type        = string
+  #default="cp4a-file-retain-gold-gid"
+  #default="ibmc-vpc-block-metro-retain-10iops-tier"
+  default="portworx-db2-rwx-sc"
+  description = "The storge class for operator pvc"
+}
+
+variable "storageclass_slow" {
+  type        = string
+  #default="cp4a-file-retain-gold-gid"
+  #default="ibmc-vpc-block-metro-retain-10iops-tier"
+  default="portworx-db2-rwx-sc"
+  description = "The storge class for operator pvc"
+}
+variable "storageclass_block" {
+  type        = string
+  #default="cp4a-file-retain-gold-gid"
+  #default="ibmc-vpc-block-metro-retain-10iops-tier"
+  default="ibmc-vpc-block-metro-retain-10iops-tier"
+  description = "The storge class for operator pvc"
+}

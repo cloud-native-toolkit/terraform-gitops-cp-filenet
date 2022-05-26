@@ -7,3 +7,7 @@ cp4ba:
  #odm_image_repository: "cp.icr.io/cp/cp4a/odm"
  #odm_image_tag: "21.0.3-IF002"
  #odm_image_version: "21.0.3"
+ storageclass_block: "ibmc-vpc-block-metro-retain-10iops-tier"
+ storageclass_fast: "portworx-db2-rwx-sc"
+ storageclass_medium: "portworx-db2-rwx-sc"
+ storageclass_slow: "portworx-db2-rwx-sc"
