@@ -56,6 +56,7 @@ spec:
         #dc_oracle_os_jdbc_url: <Required>
         dc_os_label: os
     dc_ssl_enabled: true
+<<<<<<< Updated upstream
   ext_ldap_configuration: 
     lc_bind_secret: ldap-bind-secret
     lc_ldap_base_dn: "o=ibm,c=us"
@@ -71,6 +72,23 @@ spec:
     lc_ldap_user_display_name_attr: uid
     lc_ldap_user_name_attribute: "*:uid"
     lc_selected_ldap_type: "IBM Security Directory Server"
+=======
+  #ext_ldap_configuration: 
+   # lc_bind_secret: ldap-bind-secret
+   # lc_ldap_base_dn: "o=ibm,c=us"
+   # lc_ldap_group_base_dn: "ou=Groups,o=ibm,c=us"
+   # lc_ldap_group_display_name_attr: cn
+   # lc_ldap_group_member_id_map: "groupofnames:member"
+   # lc_ldap_group_membership_search_filter: (|(&(objectclass=groupofnames)(member={0}))(&(objectclass=groupofuniquenames)(uniquemember={0})))
+   # lc_ldap_group_name_attribute: "*:cn"
+   # lc_ldap_port: "389"
+   # lc_ldap_server: {{ .Values.cp4ba.db_server }}
+   # lc_ldap_ssl_enabled: false
+   # lc_ldap_ssl_secret_name: <Required>
+   # lc_ldap_user_display_name_attr: uid
+   # lc_ldap_user_name_attribute: "*:uid"
+   # lc_selected_ldap_type: "IBM Security Directory Server"
+>>>>>>> Stashed changes
   ibm_license: accept
   initialize_configuration: 
     ic_ldap_creation: 
