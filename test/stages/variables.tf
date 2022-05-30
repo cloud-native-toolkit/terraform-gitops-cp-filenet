@@ -119,41 +119,27 @@ variable "db_user" {
   type        = string
   description = "Database User"
   default = "db2inst1"
-<<<<<<< Updated upstream
-=======
   sensitive   = true
->>>>>>> Stashed changes
 }
 variable "db_password" {
   type        = string
   description = "The namespace where the application should be deployed"
   default = "P@ssw0rd"
-<<<<<<< Updated upstream
-=======
   sensitive   = true
->>>>>>> Stashed changes
 }
 
 variable "ldapUsername" {
   type        = string
   description = "Database User"
-<<<<<<< Updated upstream
-  default = "root"
-=======
   default = "Y249cm9vdA=="
   sensitive   = true
->>>>>>> Stashed changes
 }
 
 variable "ldapPassword" {
   type        = string
   description = "The namespace where the application should be deployed"
-<<<<<<< Updated upstream
-  default = "P@ssw0rd"
-=======
   default = "UEBzc3cwcmQ="
   sensitive   = true
->>>>>>> Stashed changes
 }
 
 variable "docker_username" {

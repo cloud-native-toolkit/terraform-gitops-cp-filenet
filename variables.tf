@@ -88,25 +88,12 @@ variable "db_server" {
 variable "cp_entitlement_key" {
   default = ""
 }
-variable "ldapUsername" {
-  type        = string
-  description = "Database User"
-  default = "cn=root"
-}
-
-<<<<<<< Updated upstream
-variable "ldapPassword" {
-  type        = string
-  description = "The namespace where the application should be deployed"
-  default = "P@ssw0rd"
-}
 
 variable "odm_db_name" {
   type        = string
   description = "ODM Database Name"
   default = "odmdb"
 }
-=======
 variable "ldapUsername" {
   type        = string
   description = "Database User"
@@ -121,7 +108,6 @@ variable "ldapPassword" {
   sensitive   = true
 }
 
->>>>>>> Stashed changes
 variable "db_port" {
   type        = string
   description = "Database Port"
@@ -151,19 +137,13 @@ variable "db_user" {
   type        = string
   description = "Database User"
   default = "db2inst1"
-<<<<<<< Updated upstream
-=======
   sensitive   = true
->>>>>>> Stashed changes
 }
 variable "db_password" {
   type        = string
   description = "The namespace where the application should be deployed"
   default = "P@ssw0rd"
-<<<<<<< Updated upstream
-=======
   sensitive   = true
->>>>>>> Stashed changes
 }
 
 variable "cp4ba_operator_namesapce"{
