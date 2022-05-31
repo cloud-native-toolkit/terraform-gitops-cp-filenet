@@ -110,6 +110,7 @@ spec:
   shared_configuration: 
     image_pull_secrets: 
       - admin.registrykey
+      - ibm-entitlement-key
     root_ca_secret: icp4a-root-ca
     sc_content_initialization: false
     sc_content_verification: false
