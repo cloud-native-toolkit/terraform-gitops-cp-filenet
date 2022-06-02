@@ -26,7 +26,7 @@ module "gitops_entitle_pull_secret" {
    secret_name    = "ibm-entitlement-key"
 }
 
-module "gitops_entitle_pull_secret" {
+module "gitops_db_pull_secret" {
   source = "github.com/cloud-native-toolkit/terraform-gitops-pull-secret.git"
 
    gitops_config = module.gitops.gitops_config
