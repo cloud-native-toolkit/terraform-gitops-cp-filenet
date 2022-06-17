@@ -1,0 +1,13 @@
+cp4ba:
+ namespace: gitops-cp-filenet
+ db_server: "161.202.168.37"
+ #odm_db_name: "odmdb"
+ db_port: "50000"
+ db_type: "db2"
+ image_repository: "cp.icr.io/cp/cp4a/fncm/cpe"
+ #odm_image_tag: "21.0.3-IF002"
+ #odm_image_version: "21.0.3"
+ storageclass_block: "ibmc-vpc-block-metro-retain-10iops-tier"
+ storageclass_fast: "portworx-db2-rwx-sc"
+ storageclass_medium: "portworx-db2-rwx-sc"
+ storageclass_slow: "portworx-db2-rwx-sc"
